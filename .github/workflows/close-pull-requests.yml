@@ -14,7 +14,7 @@ jobs:
       run: |
         echo "The body of the pull request contains alfredodeza: ${{ contains(github.event.pull_request.body, 'alfredodeza') }} , and contains @alfredodeza: ${{ contains(github.event.pull_request.body, '@alfredodeza') }}"
       
-    - name: Close PR if not pre-approved
+    - name: Close PR if it wasn't  pre-approved
       if: |
         ${{ !(
           contains(github.event.pull_request.labels.*.name, 'pre-approved')
